@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BF713D0-7BFB-4BCC-89F9-D86A58A9BC78}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.md = Readme.md
+		System Analystic.xlsx = System Analystic.xlsx
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Data", "CustomerManagement.Data\CustomerManagement.Data.csproj", "{B4866710-9663-43EF-8F9E-8AFC787ADC48}"
