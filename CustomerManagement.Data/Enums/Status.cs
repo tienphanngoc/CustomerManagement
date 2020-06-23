@@ -7,6 +7,11 @@ namespace CustomerManagement.Data.Enums
     public enum Status
     {
         InActive,
-        Active
+        Active,
+        //MESSAGE STATUS
+        DRAFT,
+        SENT,
+        RECEIVE,
+        READ
     }
 }

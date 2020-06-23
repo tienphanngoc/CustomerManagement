@@ -18,5 +18,9 @@ namespace CustomerManagement.Data.EF
         public DbSet<CarModelCategory> CarModelCategories { get; set; }
         public DbSet<CarColor> CarColors { get; set; }
         public DbSet<CarEntity> CarEntities { get; set; }
+
+        //Ultities
+        public DbSet<SystemActivity> SystemActivities { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
