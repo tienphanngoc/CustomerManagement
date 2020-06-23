@@ -22,5 +22,8 @@ namespace CustomerManagement.Data.EF
         //Ultities
         public DbSet<SystemActivity> SystemActivities { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+
+        //System
+        public DbSet<AppConfig> AppConfigs { get; set; }
     }
 }
