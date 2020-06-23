@@ -1,4 +1,5 @@
-﻿using CustomerManagement.Data.Entities;
+﻿using CustomerManagement.Data.Configurations;
+using CustomerManagement.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,17 @@ namespace CustomerManagement.Data.EF
         {
             
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
+            modelBuilder.ApplyConfiguration(new BrandConfiguration());
+            modelBuilder.ApplyConfiguration(new CarCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new CarColorConfiguration());
+            modelBuilder.ApplyConfiguration(new CarModelConfiguration());
+            modelBuilder.ApplyConfiguration(new CarModelCategoryConfiguration());
+        }
+
         public DbSet<Brand> Brands { get; set; }
         public DbSet<CarCategory> CarCategories { get; set; }
         public DbSet<CarModel> CarModels { get; set; }
