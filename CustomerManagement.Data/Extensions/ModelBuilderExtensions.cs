@@ -64,7 +64,7 @@ namespace CustomerManagement.Data.Extensions
                 );
 
             //CarModelCategory
-            c.Entity<CarModelCategory>().HasData(
+            modelBuilder.Entity<CarModelCategory>().HasData(
                 new CarModelCategory() { CarModelId = 1, CarCategoryId = 1 },
                 new CarModelCategory() { CarModelId = 2, CarCategoryId = 2 },
                 new CarModelCategory() { CarModelId = 3, CarCategoryId = 2 },
