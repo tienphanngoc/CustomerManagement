@@ -1,4 +1,5 @@
 ﻿using CustomerManagement.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -63,7 +64,7 @@ namespace CustomerManagement.Data.Extensions
                 );
 
             //CarModelCategory
-            modelBuilder.Entity<CarModelCategory>().HasData(
+            c.Entity<CarModelCategory>().HasData(
                 new CarModelCategory() { CarModelId = 1, CarCategoryId = 1 },
                 new CarModelCategory() { CarModelId = 2, CarCategoryId = 2 },
                 new CarModelCategory() { CarModelId = 3, CarCategoryId = 2 },
@@ -73,7 +74,37 @@ namespace CustomerManagement.Data.Extensions
                 new CarModelCategory() { CarModelId = 7, CarCategoryId = 2 },
                 new CarModelCategory() { CarModelId = 8, CarCategoryId = 3 }
 
-                ); ; 
+                ); ;
+
+            //Identity
+            const int ADMIN_ID = 1;
+            // any guid, but nothing is against to use the same one
+            const int ROLE_ID = ADMIN_ID;
+            modelBuilder.Entity<EmployeePosition>().HasData(new EmployeePosition
+            {
+                Id = ROLE_ID,
+                Name = "Adminstrator",
+                NormalizedName = "adminstrator"
+            });
+
+            var hasher = new PasswordHasher<Employee>();
+            modelBuilder.Entity<Employee>().HasData(new Employee
+            {
+                Id = ADMIN_ID,
+                UserName = "admin",
+                NormalizedUserName = "admin",
+                Email = "admin@subarukimson.vn",
+                NormalizedEmail = "admin@subarukimson.vn",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Abc123!@#"),
+                SecurityStamp = string.Empty
+            });
+
+            modelBuilder.Entity<IdentityUserRole<int>>().HasData(new IdentityUserRole<int>
+            {
+                RoleId = ROLE_ID,
+                UserId = ADMIN_ID
+            });
         }
     }
 }
