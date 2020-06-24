@@ -91,6 +91,8 @@ namespace CustomerManagement.Data.Extensions
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
                 Id = ADMIN_ID,
+                FirstName = "Tiến",
+                LastName = "Phan Ngọc",
                 UserName = "admin",
                 NormalizedUserName = "admin",
                 Email = "admin@subarukimson.vn",
