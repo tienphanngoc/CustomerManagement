@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CustomerManagement.Data.Configurations
 {
-    public class CarColorConfiguration : IEntityTypeConfiguration<CarColor>()
+    public class CarColorConfiguration : IEntityTypeConfiguration<CarColor>
     {
         public void Configure(EntityTypeBuilder<CarColor> builder)
         {

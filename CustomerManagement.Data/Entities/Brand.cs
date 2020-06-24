@@ -11,7 +11,7 @@ namespace CustomerManagement.Data.Entities
         public string Logo { get; set; }
 
         //Navigations
-        public virtual HashSet<CarCategory> CarCategories { get; set; };
+        public virtual HashSet<CarCategory> CarCategories { get; set; }
 
         public Brand()
         {
