@@ -1,5 +1,4 @@
-﻿using CustomerManagement.Data.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -21,7 +20,6 @@ namespace CustomerManagement.Data.Entities
 
         [Range(0, long.MaxValue)]
         public long OriginalPrice { get; set; }
-        public EntityStatus Status { get; set; }
 
         //Navigations
         public virtual HashSet<CarModelCategory> CarModelCategories { get; set; }
